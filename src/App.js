@@ -8,6 +8,8 @@ import Institues from './pages/Institues';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
 import Patinet from './pages/Patinet';
+import Doctor from './pages/Doctor';
+import HospitalAdmin from './pages/HospitalAdmin';
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/patient" element={<Patinet />} />
+          <Route path="/doctor" element={<Doctor />} />
+          <Route path="/hosptialadmin" element={<HospitalAdmin />} />
         </Routes>
       </BrowserRouter>
     </div>

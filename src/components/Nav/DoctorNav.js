@@ -4,7 +4,7 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 import { AiFillCloseSquare } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 
-const LoginNav = () => {
+const DoctorNav = () => {
     const [ham, setHam] = useState(false);
     return (
         <div className='max-w-full w-full h-[80px] bg-[#5cdb95] sm:px-6 px-4 flex flex-row justify-between items-center text-[#05386b] font-["Noto_Sans"]'>
@@ -19,7 +19,7 @@ const LoginNav = () => {
                     <Link to={'/'}><li>Home</li></Link>
                     <Link to={'/hospitals'}><li className='ml-6'>Hospitals</li></Link>
                     <Link to={'/institues'}><li className='ml-6'>Affiliated Institutions</li></Link>
-                    <Link to={'/patient'}><li className='ml-6 text-white bg-[#05386b] px-3 py-3 rounded-md'>Dashboard</li></Link>
+                    <Link to={'/doctor'}><li className='ml-6 text-white bg-[#05386b] px-3 py-3 rounded-md'>Dashboard</li></Link>
                     <li className='ml-6 text-white bg-[#05386b] px-3 py-3 rounded-md'>Log Out</li>
                 </ul>
             </div>
@@ -32,7 +32,7 @@ const LoginNav = () => {
                         <Link to={'/'}><li className='ml-6'>Home</li></Link>
                         <Link to={'/hospitals'}><li className='ml-6 mt-4'>Hospitals</li></Link>
                         <Link to={'/institues'}><li className='ml-6 mt-4'>Affiliated Institutions</li></Link>
-                        <Link to={'/patient'}><li className='ml-6 mt-4 text-white bg-[#05386b] px-3 py-3 rounded-md'>Dashboard</li></Link>
+                        <Link to={'/doctor'}><li className='ml-6 mt-4 text-white bg-[#05386b] px-3 py-3 rounded-md'>Dashboard</li></Link>
                         <li className='ml-6 mt-4 text-white bg-[#05386b] px-3 py-3 rounded-md'>Log Out</li>
                     </ul>
                 </div>
@@ -41,4 +41,4 @@ const LoginNav = () => {
     )
 }
 
-export default LoginNav
+export default DoctorNav
