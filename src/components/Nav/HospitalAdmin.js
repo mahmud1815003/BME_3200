@@ -3,6 +3,7 @@ import { RiHospitalFill } from 'react-icons/ri';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { AiFillCloseSquare } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
+
 const HospitalAdminNav = () => {
     const [ham, setHam] = useState(false);
     return (

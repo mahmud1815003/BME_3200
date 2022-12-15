@@ -3,21 +3,9 @@ import { RiHospitalFill } from 'react-icons/ri';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { AiFillCloseSquare } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
-import useAuth from '../hooks/useAuth';
-import { useDispatch, useSelector } from 'react-redux';
-import { userLoggedOut } from '../redux/Login/loginSlice';
 
-const Nav = () => {
+const AdminNav = () => {
     const [ham, setHam] = useState(false);
-    const auth = useAuth();
-    const user = useSelector(state => state.login?.user?.role);
-    const dispatch = useDispatch();
-
-    const logout = () => {
-         dispatch(userLoggedOut());
-         localStorage.clear();
-    }
-
     return (
         <div className='max-w-full w-full h-[80px] bg-[#5cdb95] sm:px-6 px-4 flex flex-row justify-between items-center text-[#05386b] font-["Noto_Sans"]'>
             <div className='flex flex-row items-center'>
@@ -31,12 +19,8 @@ const Nav = () => {
                     <Link to={'/'}><li>Home</li></Link>
                     <Link to={'/hospitals'}><li className='ml-6'>Hospitals</li></Link>
                     <Link to={'/institues'}><li className='ml-6'>Affiliated Institutions</li></Link>
-                    {!auth ? <Link to={'/login'}><li className='ml-6 text-white bg-[#05386b] px-3 py-3 rounded-md'>Log In</li></Link>
-                    :     <Link to={`/${user}`}><li className='ml-6 text-white bg-[#05386b] px-3 py-3 rounded-md'>Dashboard</li></Link>
-                }
-                    {!auth ? <Link to={'/signup'}><li className='ml-6 text-white bg-[#05386b] px-3 py-3 rounded-md'>Sign Up</li></Link>
-                        : <li className='ml-6 text-white bg-[#05386b] px-3 py-3 rounded-md' onClick={logout}>Logout</li> 
-                   }
+                    <Link to={'/doctor'}><li className='ml-6 text-white bg-[#05386b] px-3 py-3 rounded-md'>Dashboard</li></Link>
+                    <li className='ml-6 text-white bg-[#05386b] px-3 py-3 rounded-md'>Log Out</li>
                 </ul>
             </div>
             <div className='lg:hidden block' onClick={() => setHam(!ham)}>
@@ -48,12 +32,8 @@ const Nav = () => {
                         <Link to={'/'}><li className='ml-6'>Home</li></Link>
                         <Link to={'/hospitals'}><li className='ml-6 mt-4'>Hospitals</li></Link>
                         <Link to={'/institues'}><li className='ml-6 mt-4'>Affiliated Institutions</li></Link>
-                        {!auth ? <Link to={'/login'}><li className='ml-6 mt-4 text-white bg-[#05386b] px-3 py-3 rounded-md'>Log In</li></Link>
-                            : <Link to={`/${user}`}><li className='ml-6 mt-4 text-white bg-[#05386b] px-3 py-3 rounded-md'>Dashboard</li></Link>
-                        }
-                        {!auth ? <Link to={'/login'}><li className='ml-6 mt-4 text-white bg-[#05386b] px-3 py-3 rounded-md'>Sign Up</li></Link>
-                        : <li className='ml-6 mt-4 text-white bg-[#05386b] px-3 py-3 rounded-md' onClick={logout}>Logout</li>    
-                    }
+                        <Link to={'/doctor'}><li className='ml-6 mt-4 text-white bg-[#05386b] px-3 py-3 rounded-md'>Dashboard</li></Link>
+                        <li className='ml-6 mt-4 text-white bg-[#05386b] px-3 py-3 rounded-md'>Log Out</li>
                     </ul>
                 </div>
             }
@@ -61,4 +41,4 @@ const Nav = () => {
     )
 }
 
-export default Nav
+export default AdminNav

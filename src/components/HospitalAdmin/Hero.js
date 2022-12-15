@@ -1,4 +1,5 @@
 import React from 'react'
+import Body from './Body'
 
 const Hero = () => {
     return (
@@ -14,7 +15,7 @@ const Hero = () => {
                     </div>
                 </div>
                 <div className='col-end-[-1] col-span-9'>
-                    
+                    <Body />
                 </div>
             </div>
         </>
